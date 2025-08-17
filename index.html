@@ -1,117 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercise 7 using grid layout</title>
-    <link rel="stylesheet" href="exercise7.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 7 using Grid Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      background-color: rgb(238, 228, 228);
+    }
+
+    .nav {
+      display: flex;
+      position: sticky;
+      top: 0;
+    }
+
+    #head {
+      padding-left: 30px;
+      font-size: xx-large;
+    }
+
+    #head2 {
+      padding-left: 30px;
+    }
+
+    .list {
+      height: 10vh;
+      width: 1200px;
+      background-color: coral;
+    }
+
+    ul {
+      margin-top: 20px;
+      margin-left: 600px;
+      display: flex;
+      list-style-type: none;
+      column-gap: 30px;
+      font-weight: bold;
+      font-size: large;
+    }
+
+    .heading {
+      height: 10vh;
+      width: 300px;
+      background-color: coral;
+    }
+
+    li span img {
+      position: relative;
+      top: 3px;
+      height: 16px;
+      width: 16px;
+    }
+
+    .download {
+      display: flex;
+      margin-top: 50px;
+      height: 15vh;
+      width: 800px;
+      margin-left: 300px;
+      background-color: antiquewhite;
+      border: 1px solid black;
+    }
+
+    .download img {
+      padding-top: 20px;
+      padding-left: 40px;
+      height: 55px;
+      width: 55px;
+    }
+
+    .download h1 {
+      padding-top: 20px;
+      padding-left: 30px;
+    }
+
+    .main {
+      margin: 30px;
+      margin-left: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "one one2 one3"
+                           "two two2 two3"
+                           "three three2 three3"
+                           "four four2 four3";
+    }
+
+    @media screen and (max-width: 945px) {
+      .main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "one"
+          "one2"
+          "one3"
+          "two"
+          "two2"
+          "two3"
+          "three"
+          "three2"
+          "three3"
+          "four";
+      }
+    }
+
+    .box1 { grid-area: one; }
+    .box2 { grid-area: one2; }
+    .box3 { grid-area: one3; }
+    .box4 { grid-area: two; }
+    .box5 { grid-area: two2; }
+    .box6 { grid-area: two3; }
+    .box7 { grid-area: three; }
+    .box8 { grid-area: three2; }
+    .box9 { grid-area: three3; }
+    .box10 { grid-area: four; }
+
+    .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10 {
+      width: 400px;
+      height: 300px;
+      border: 1px solid black;
+    }
+
+    .box {
+      margin: 5px;
+      background-color: rgb(192, 197, 195);
+    }
+
+    .box h1 {
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+    }
+
+    #oneeee {
+      margin-top: 200px;
+      margin-left: 8px;
+      padding-top: 6px;
+      padding-right: 6px;
+      background-color: rgb(142, 142, 233);
+      font-size: larger;
+      border: 2px solid black;
+      height: 30px;
+      width: 180px;
+      text-align: center;
+    }
+
+    #twooo {
+      margin-top: 200px;
+      margin-left: 70px;
+      background-color: greenyellow;
+      font-size: larger;
+      padding-top: 6px;
+      border: 2px solid black;
+      height: 30px;
+      width: 180px;
+      text-align: center;
+    }
+
+    #oneeee a, #twooo a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="nav">
-        <div class="heading">
-            <h1 id="head"><b>Ultra Edit</b></h1>
-<h5 id="head2">the make it company</h5>
-
-        </div>
-        <div class="list">
-            <ul>
-                <li>Product
-                    <span><img src="dropdownlist symbol.jpg"></span>
-                </li>
-                <li> Pricings
-                    <span><img src="dropdownlist symbol.jpg"></span>
-                </li>
-                <li>Resources
-                    <span><img src="dropdownlist symbol.jpg"></span>
-                </li>
-                <li>About us
-                    <span><img src="dropdownlist symbol.jpg"></span>
-                </li>
-
-            </ul>
-        </div>
+  <div class="nav">
+    <div class="heading">
+      <h1 id="head"><b>Ultra Edit</b></h1>
+      <h5 id="head2">the make it company</h5>
     </div>
-    <div class="download">
-        <img src="download img.jpg">
-        <h1>Download Ultra edit</h1>
+    <div class="list">
+      <ul>
+        <li>Product <span><img src="dropdownlist symbol.jpg" alt="dropdown"></span></li>
+        <li>Pricings <span><img src="dropdownlist symbol.jpg" alt="dropdown"></span></li>
+        <li>Resources <span><img src="dropdownlist symbol.jpg" alt="dropdown"></span></li>
+        <li>About us <span><img src="dropdownlist symbol.jpg" alt="dropdown"></span></li>
+      </ul>
     </div>
-    <div class="main">
-        <div class=" box box1">
-            <h1>English</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box2">
-            <h1>Turkuish</h1>
-            <div class="buttons">
-              <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div> 
-            </div>
-        </div>
-        <div class=" box box3">
-            <h1>Urdu</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box4">
-            <h1>Literature</h1>
-            <div class="buttons">
-               <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class="  box box5">
-            <h1>computer</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class="  box box6">
-            <h1>Biology</h1>
-            <div class="buttons">
-               <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box7">
-            <h1>Chemistry</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box8">
-            <h1>Education</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box9">
-            <h1>Physics</h1>
-            <div class="buttons">
-               <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
-        <div class=" box box10">
-            <h1>Spanish</h1>
-            <div class="buttons">
-                <div id="oneeee"><a href="cardpic.jpg"> Download 32_bit</a></div>
-                <div id="twooo" > <a href="cardpic.jpg"> Download 64_bit</a></div>
-            </div>
-        </div>
+  </div>
+
+  <div class="download">
+    <img src="download img.jpg" alt="Download">
+    <h1>Download Ultra edit</h1>
+  </div>
+
+  <div class="main">
+    <div class="box box1">
+      <h1>English</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
     </div>
-
-
+    <div class="box box2">
+      <h1>Turkish</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box3">
+      <h1>Urdu</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box4">
+      <h1>Literature</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box5">
+      <h1>Computer</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box6">
+      <h1>Biology</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box7">
+      <h1>Chemistry</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box8">
+      <h1>Education</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box9">
+      <h1>Physics</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+    <div class="box box10">
+      <h1>Spanish</h1>
+      <div class="buttons">
+        <div id="oneeee"><a href="cardpic.jpg">Download 32_bit</a></div>
+        <div id="twooo"><a href="cardpic.jpg">Download 64_bit</a></div>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
